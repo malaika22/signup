@@ -74,18 +74,22 @@ const Signup = () =>{
                 <div className="signup-content-div">
                     <div className="signup-title">Sign up</div>
                     <div className="form-div">
-                        <form onSubmit={handleSubmit} className="signup-form">
+                        <form onSubmit={handleSubmit} className="signup-form" autoComplete="nope">
                             <div className="input-div">
-                                <input placeholder="Full name" required type="text" value={values.fullName.value} name="fullName" className="signup-input" onChange={handleChange}/>
+                                <input placeholder="Full name" required type="text" value={values.fullName.value} name="fullName" className="signup-input" onChange={handleChange} autoComplete="nope"/>
+                                {values.fullName.error ? <span className="error-span">{values.fullName.error}</span> : <></>}
                             </div>
                             <div className="input-div">
                                 <input placeholder="You are a: Dev, Freelance, Businessman" type="text" name="profession" className="signup-input" value={values.profession.value} onChange={handleChange}/>
+                                {values.profession.error ? <span className="error-span">{values.profession.error}</span> : <></>}
                             </div>
                             <div className="input-div">
-                                <input placeholder="Phone" name="phone" required className="signup-input" value={values.phone.value} onChange={handleChange}/>
+                                <input placeholder="Phone" name="phone" required className="signup-input" value={values.phone.value} onChange={handleChange} autoComplete="nope"/>
+                                {values.phone.error ? <span className="error-span">{values.phone.error}</span> : <></>}
                             </div>
                             <div className="input-div">
-                                <input placeholder="Email" type="email" required className="signup-input" value={values.email.value} onChange={handleChange}/>
+                                <input placeholder="Email" type="email" name="email" required className="signup-input" value={values.email.value} onChange={handleChange} autoComplete="nope"/>
+                                {values.email.error ? <span className="error-span">{values.email.error}</span> : <></>}
                             </div>
                             <div className="submit-div">
                                 <input type="submit" value="Join the wait list" className="signup-button"/>
