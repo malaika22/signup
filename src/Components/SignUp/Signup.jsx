@@ -2,6 +2,7 @@ import React from 'react'
 import avatar1 from '../../assests/images/avatar1.png'
 import avatar2 from '../../assests/images/avatar2.png'
 import avatar3 from '../../assests/images/avatar3.png'
+import './styles.scss'
 
 
 const Signup = () =>{
@@ -15,13 +16,21 @@ const Signup = () =>{
                 <div className="signup-content-div">
                     <div className="signup-title">Sign up</div>
                     <div className="form-div">
-                        <form onSubmit={handleSubmit}>
-                            <input placeholder="Full name" required type="text" name="name" className="signup-input"/>
-                            <input placeholder="You are a: Dev, Freelance, Businessman" type="text" name="profession" className="signup-input"/>
-                            <input placeholder="Phone" name="phone" required className="signup-input"/>
-                            <input placeholder="Email" type="email" required className="signup-input"/>
-                            <div className="submit-button">
-                                <input type="submit" value="Join the wait list" />
+                        <form onSubmit={handleSubmit} className="signup-form">
+                            <div className="input-div">
+                                <input placeholder="Full name" required type="text" name="name" className="signup-input"/>
+                            </div>
+                            <div className="input-div">
+                                <input placeholder="You are a: Dev, Freelance, Businessman" type="text" name="profession" className="signup-input"/>
+                            </div>
+                            <div className="input-div">
+                                <input placeholder="Phone" name="phone" required className="signup-input"/>
+                            </div>
+                            <div className="input-div">
+                                <input placeholder="Email" type="email" required className="signup-input"/>
+                            </div>
+                            <div className="submit-div">
+                                <input type="submit" value="Join the wait list" className="signup-button"/>
                             </div>
                         </form>
                     </div>
@@ -34,9 +43,9 @@ const Signup = () =>{
                     Sign up to get access to our key features.</div>
                     <div className="members-div">
                         <div className="avatar-div">
-                            <img src={avatar1} alt="Edwin"/>
-                            <img src={avatar2} alt="Gaurav"/>
-                            <img src={avatar3} alt="John"/>
+                            <img src={avatar1} alt="Edwin" className="avatar-image"/>
+                            <img src={avatar2} alt="Gaurav" className="avatar-image"/>
+                            <img src={avatar3} alt="John" className="avatar-image"/>
                         </div>
                         <div className="joined-members">1k+  members have joined.</div>
                     </div>
