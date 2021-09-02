@@ -25,12 +25,35 @@ const Signup = () =>{
         }
     })
 
+    // Validations
     const validEmailRegex = 
-  RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-       
-  const fullNameRegex = RegExp(/^[A-Za-z ]+$/)
-    console.log(fullNameRegex.test("malaika afridi"))
-  const phoneNumberRegex = RegExp('^\d+$');
+        RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+    const fullNameRegex = RegExp(/^[A-Za-z ]+$/)
+    const phoneNumberRegex = RegExp(/^[0-9]+$/);
+
+    //Clear input fields
+    const clearFields = () =>{
+        setValues({
+        fullName : {
+            value : '', 
+            error : ''
+        } , 
+        profession : {
+            value : '' ,
+            error : ''
+        } ,
+        phone : {
+            value : '' ,
+            error : ''
+        } , 
+        email : {
+            value : '' ,
+            error : ''
+        }
+        })
+    }
+
+    //Handle input change
     const handleChange = (e) =>{
         const {name, value} = e.target;
         let error = "";
@@ -51,7 +74,7 @@ const Signup = () =>{
             default: 
             break;
         }
-        console.log(error)
+       
         setValues({
             ...values,
             [name] : {
@@ -60,13 +83,21 @@ const Signup = () =>{
             } 
         })
     }
-
-    console.log(values)
-
     
 
-    const handleSubmit = () => {
-
+    //Handle form submit
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        for(let key in values) {
+            if(values[key].error || !values[key].value){
+                alert("Not all values are filled")
+                return
+            } else{ 
+                alert("Form submitted succesfully")
+                clearFields()
+                return
+            }
+        }
     }
     return(
         <div className="signup-container">
@@ -92,7 +123,7 @@ const Signup = () =>{
                                 {values.email.error ? <span className="error-span">{values.email.error}</span> : <></>}
                             </div>
                             <div className="submit-div">
-                                <input type="submit" value="Join the wait list" className="signup-button"/>
+                                <input type="submit" value="Join the wait list" className="signup-button" onClick={handleSubmit}/>
                             </div>
                         </form>
                     </div>
@@ -105,9 +136,9 @@ const Signup = () =>{
                     Sign up to get access to our key features.</div>
                     <div className="members-div">
                         <div className="avatar-div">
-                            <img src={avatar1} alt="Edwin" className="avatar-image"/>
-                            <img src={avatar2} alt="Gaurav" className="avatar-image"/>
-                            <img src={avatar3} alt="John" className="avatar-image"/>
+                            <img src={avatar1} alt="Edwin" className="avatar-image" />
+                            <img src={avatar2} alt="Gaurav" className="avatar-image" style={{right : "-48px"}}/>
+                            <img src={avatar3} alt="John" className="avatar-image" style={{right: "-64px"}}/>
                         </div>
                         <div className="joined-members">1k+  members have joined.</div>
                     </div>

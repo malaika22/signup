@@ -8,7 +8,7 @@
             width: 80%;
             margin: auto;
             position: relative;
-            top: 20%;
+            top: 12%;
             .signup-title{
                 font-size: 2rem;
                 color: #6c3190;
@@ -85,21 +85,75 @@
             .members-div{
                 display: flex;
                 align-items: center;
-                margin-top: 2rem;
+                margin-top: 2.5rem;
                 .avatar-div{
+                    position: relative;
                     .avatar-image{
                         border-radius: 50%;
                         width: 28px;
                         border: 2px solid white;
+                        position: absolute;
+                        top: -14px;
                     }
                 }
                 .joined-members{
                     font-size: 0.8rem;
                     color: #ffff;
                     font-weight: 600;
-                    margin-left: 10px;
+                    margin-left: 78px;
                 }
             }
         }
     }
+}
+
+
+@media screen and (max-width: 1024px){
+    .signup-container {
+          .left-signup-section{
+            .signup-content-div{
+                .form-div{
+                   .signup-form{
+                       .input-div{
+                           height: 4.5rem;
+                           .signup-input{
+                                padding: 15px 20px;
+                           }
+                       }
+                       .submit-div{
+                           .signup-button{
+                                padding: 15px 30px;
+                           }
+                       }
+                   } 
+                }
+            }
+        }
+        .right-signup-section{
+            .right-content{
+                .welcome-title{
+                    color: #ffff;
+                    width: 88%;
+                    font-weight: 700;
+                    line-height: 1.5;
+                    font-size: 2rem;
+                }
+                .intro-div{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }  
+}
+
+@media screen and (max-width: 425px) {
+    .signup-container{
+        .left-signup-section{
+            width: 100%;
+        }
+        .right-signup-section{
+            display: none;
+        }
+    }
+   
 }
