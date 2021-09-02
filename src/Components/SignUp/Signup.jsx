@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import avatar1 from '../../assests/images/avatar1.png'
 import avatar2 from '../../assests/images/avatar2.png'
 import avatar3 from '../../assests/images/avatar3.png'
@@ -6,6 +6,64 @@ import './styles.scss'
 
 
 const Signup = () =>{
+    const [values, setValues] = useState({
+        fullName : {
+            value : '', 
+            error : ''
+        } , 
+        profession : {
+            value : '' ,
+            error : ''
+        } ,
+        phone : {
+            value : '' ,
+            error : ''
+        } , 
+        email : {
+            value : '' ,
+            error : ''
+        }
+    })
+
+    const validEmailRegex = 
+  RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+       
+  const fullNameRegex = RegExp(/^[A-Za-z ]+$/)
+    console.log(fullNameRegex.test("malaika afridi"))
+  const phoneNumberRegex = RegExp('^\d+$');
+    const handleChange = (e) =>{
+        const {name, value} = e.target;
+        let error = "";
+
+        switch(name) {
+            case 'fullName' : 
+                error = (!value ? "Full name can't be empty" : "" ) || (fullNameRegex.test(value) ? '' : 'Full name should only contain alphabets')
+                break; 
+            case 'profession' : 
+                error = !value && "Profession can't be empty";
+                break;
+            case 'phone' :
+                error = (!value && "Phone number can't be empty" ) || (phoneNumberRegex.test(value) ? '' : 'Phone number should only contain numbers')
+                break;
+            case 'email' : 
+                error = (!value && "Email can't be empty" ) || (validEmailRegex.test(value) ? '' : 'Email is not valid')
+                break;
+            default: 
+            break;
+        }
+        console.log(error)
+        setValues({
+            ...values,
+            [name] : {
+                value,
+                error
+            } 
+        })
+    }
+
+    console.log(values)
+
+    
 
     const handleSubmit = () => {
 
@@ -18,16 +76,16 @@ const Signup = () =>{
                     <div className="form-div">
                         <form onSubmit={handleSubmit} className="signup-form">
                             <div className="input-div">
-                                <input placeholder="Full name" required type="text" name="name" className="signup-input"/>
+                                <input placeholder="Full name" required type="text" value={values.fullName.value} name="fullName" className="signup-input" onChange={handleChange}/>
                             </div>
                             <div className="input-div">
-                                <input placeholder="You are a: Dev, Freelance, Businessman" type="text" name="profession" className="signup-input"/>
+                                <input placeholder="You are a: Dev, Freelance, Businessman" type="text" name="profession" className="signup-input" value={values.profession.value} onChange={handleChange}/>
                             </div>
                             <div className="input-div">
-                                <input placeholder="Phone" name="phone" required className="signup-input"/>
+                                <input placeholder="Phone" name="phone" required className="signup-input" value={values.phone.value} onChange={handleChange}/>
                             </div>
                             <div className="input-div">
-                                <input placeholder="Email" type="email" required className="signup-input"/>
+                                <input placeholder="Email" type="email" required className="signup-input" value={values.email.value} onChange={handleChange}/>
                             </div>
                             <div className="submit-div">
                                 <input type="submit" value="Join the wait list" className="signup-button"/>
