@@ -1,4 +1,3 @@
-import './App.css';
 import Signup from './Components/SignUp/Signup'
 
 
