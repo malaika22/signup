@@ -130,6 +130,8 @@ const Signup = () =>{
                 </div>
             </div>
             <div className="right-signup-section">
+                <div className="square1 square-top"></div>
+                <div className="square3 square-top"></div>
                 <div className="right-content">
                     <div className="welcome-title">Welcome to our community</div>
                     <div className="intro-div">Integrating innovation, community and providing our members with the best user experience. 
@@ -143,6 +145,8 @@ const Signup = () =>{
                         <div className="joined-members">1k+  members have joined.</div>
                     </div>
                 </div>
+                <div className="square4 square-bottom"></div>
+                <div className="square6 square-bottom"></div>
             </div>
         </div>
     )

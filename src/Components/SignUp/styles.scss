@@ -65,6 +65,37 @@
     .right-signup-section{
         width: 55%;
         background-color: #6c3190;
+        position: relative;
+        .square-top{
+            position: absolute;
+            //padding: 101px;
+            border: 25px solid #622a85;
+            /* color: black; */
+            border-top: none
+        }
+        .square-bottom{
+            position: absolute;
+            border: 25px solid #622a85;
+            border-bottom: none;
+            bottom: 0;
+            padding: 59px 100px;
+        }
+        .square1{
+                padding: 106px 122px;
+        }
+        .square3{
+            right: 0;
+            padding: 143px 157px;
+            border-right: none;
+        }
+        .square4{
+
+        }
+        .square6{
+            right: 0;
+            padding: 109px 200px;
+            border-right: none;
+        }
         .right-content{
             width: 70%;
             position: relative;
@@ -88,6 +119,7 @@
                 margin-top: 2.5rem;
                 .avatar-div{
                     position: relative;
+                    z-index: 100;
                     .avatar-image{
                         border-radius: 50%;
                         width: 28px;
@@ -101,6 +133,7 @@
                     color: #ffff;
                     font-weight: 600;
                     margin-left: 78px;
+                    z-index: 1000;
                 }
             }
         }
@@ -130,6 +163,12 @@
             }
         }
         .right-signup-section{
+            .square3{
+                padding: 85px 90px;
+            }
+            .square6{
+                padding: 80px 93px;
+            }
             .right-content{
                 .welcome-title{
                     color: #ffff;
@@ -162,6 +201,19 @@
         }
         .right-signup-section{
             width: 100%;
+            .square1{
+                padding: 48px 67px
+            }
+            .square3{
+                right: 0;
+                padding: 68px 43px;
+            }
+            .square4{
+                padding: 16px 81px;
+            }
+            .square6{
+                padding: 31px 33px;
+            }
             .right-content{
                 text-align: center;
                 padding: 36px 0;
