@@ -27,7 +27,7 @@ const Signup = () =>{
 
     // Validations
     const validEmailRegex = 
-        RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+        RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
     const fullNameRegex = RegExp(/^[A-Za-z ]+$/)
     const phoneNumberRegex = RegExp(/^[0-9]+$/);
 
