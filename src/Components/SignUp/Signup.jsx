@@ -111,7 +111,7 @@ const Signup = () =>{
                                 {values.fullName.error ? <span className="error-span">{values.fullName.error}</span> : <></>}
                             </div>
                             <div className="input-div">
-                                <input placeholder="You are a: Dev, Freelance, Businessman" type="text" name="profession" className="signup-input" value={values.profession.value} onChange={handleChange}/>
+                                <input placeholder="You are a: Dev, Freelance, Businessman" type="text" name="profession" className="signup-input" value={values.profession.value} onChange={handleChange} autoComplete="nope"/>
                                 {values.profession.error ? <span className="error-span">{values.profession.error}</span> : <></>}
                             </div>
                             <div className="input-div">
