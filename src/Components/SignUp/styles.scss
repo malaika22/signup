@@ -148,11 +148,53 @@
 
 @media screen and (max-width: 425px) {
     .signup-container{
+        flex-direction: column-reverse;
+        height: auto;
         .left-signup-section{
             width: 100%;
+            .signup-content-div{
+                padding: 30px 0;
+                .signup-title{
+                    font-size: 1.5rem;
+                }
+            }
+
         }
         .right-signup-section{
-            display: none;
+            width: 100%;
+            .right-content{
+                text-align: center;
+                padding: 36px 0;
+                .welcome-title{
+                    font-size: 1.5rem;
+                    width: 100%;
+                }
+                .intro-div{
+                    font-size: 0.8rem;
+                    line-height: 1.7;
+                }
+                .members-div{
+                    margin-top: 2.5rem;
+                    text-align: center;
+                    width: 90%;
+                    margin: 2.5rem auto 0 auto;
+                    .avatar-div{
+                        .avatar-image{
+                            width: 21px;
+                        }
+                        .image2{
+                            right: -39px;
+                        }
+                        .image3{
+                            right: -54px;
+                        }
+                    }
+                    .joined-members{
+                        margin-left: 73px;
+                        font-size: 0.6rem;
+                    }
+                }
+            }
         }
     }
    

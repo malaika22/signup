@@ -136,9 +136,9 @@ const Signup = () =>{
                     Sign up to get access to our key features.</div>
                     <div className="members-div">
                         <div className="avatar-div">
-                            <img src={avatar1} alt="Edwin" className="avatar-image" />
-                            <img src={avatar2} alt="Gaurav" className="avatar-image" style={{right : "-48px"}}/>
-                            <img src={avatar3} alt="John" className="avatar-image" style={{right: "-64px"}}/>
+                            <img src={avatar1} alt="Edwin" className="avatar-image image1" />
+                            <img src={avatar2} alt="Gaurav" className="avatar-image image2" style={{right : "-48px"}}/>
+                            <img src={avatar3} alt="John" className="avatar-image image3" style={{right: "-64px"}}/>
                         </div>
                         <div className="joined-members">1k+  members have joined.</div>
                     </div>
