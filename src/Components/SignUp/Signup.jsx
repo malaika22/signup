@@ -107,7 +107,7 @@ const Signup = () =>{
                     <div className="form-div">
                         <form onSubmit={handleSubmit} className="signup-form" autoComplete="nope">
                             <div className="input-div">
-                                <input placeholder="Full name" required type="text" value={values.fullName.value} name="fullName" className="signup-input" onChange={handleChange} autoComplete="nope"/>
+                                <input placeholder="Full name" required type="text" value={values.fullName.value} name="fullName" className="signup-input" onChange={handleChange} autoComplete="fallse"/>
                                 {values.fullName.error ? <span className="error-span">{values.fullName.error}</span> : <></>}
                             </div>
                             <div className="input-div">
